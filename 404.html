@@ -45,6 +45,20 @@
             opacity: 0.9;
         }
     </style>
+    
+    <script>
+        // Handle extensionless URLs
+        (function() {
+            var path = window.location.pathname;
+            if (path === '/support') {
+                window.location.href = '/support.html';
+            }
+            // Add more pages as needed
+            // else if (path === '/other-page') {
+            //    window.location.href = '/other-page.html';
+            // }
+        })();
+    </script>
 </head>
 <body>
     <main>

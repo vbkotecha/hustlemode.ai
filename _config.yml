@@ -1,9 +1,9 @@
 # Jekyll configuration for HustleMode.AI
 
 # Enable pretty URLs (removes .html extension from URLs)
-permalink: pretty
+permalink: /:title/
 
-# Set default layouts
+# Default settings
 defaults:
   - scope:
       path: ""
