@@ -8,18 +8,19 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
     <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="assets/images/logo.png" as="image">
     <link rel="preload" href="https://use.typekit.net/mxj8dvt.css" as="style">
     <link rel="preconnect" href="https://use.typekit.net">
     <link rel="dns-prefetch" href="https://use.typekit.net">
     
-    <title>Page Not Found - HustleMode.AI</title>
+    <title>404 - Page Not Found | HustleMode.AI</title>
     
     <!-- Adobe Fonts (Proxima Nova) -->
     <link rel="stylesheet" href="https://use.typekit.net/mxj8dvt.css">
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Favicon -->
+    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
@@ -40,16 +41,8 @@
         .error-message {
             font-size: clamp(1.5rem, 4vw, 2.5rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-        
-        .error-subtitle {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 3rem;
-            font-style: italic;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -58,7 +51,6 @@
         <img src="assets/images/logo.png" alt="HustleMode.AI Logo" class="logo" width="120" height="120">
         <h1 class="error-code">404</h1>
         <h2 class="error-message">Page Not Found</h2>
-        <p class="error-subtitle">Watch where you going bruh</p>
         <a href="/" class="cta-button">Back to Home</a>
     </main>
     <footer>
