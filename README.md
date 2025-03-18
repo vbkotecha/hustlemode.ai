@@ -61,4 +61,10 @@ For any questions or support:
 
 ## License
 
-Copyright © 2024 HustleMode.AI - All rights reserved. 
+Proprietary and Confidential
+
+This software and its documentation are protected by copyright law and international treaties. Unauthorized reproduction, distribution, or modification of this software, in whole or in part, is strictly prohibited.
+
+All rights reserved. © 2024 HustleMode.AI
+
+This software is the confidential and proprietary information of HustleMode.AI. You shall not disclose such confidential information and shall use it only in accordance with the terms of the license agreement you entered into with HustleMode.AI. 
