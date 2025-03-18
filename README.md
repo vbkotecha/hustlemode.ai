@@ -1,17 +1,6 @@
 # [HustleMode.AI](https://hustlemode.ai) 🚀
 
-Welcome to HustleMode.AI - Your AI Accountability Coach! This repository contains the landing page for HustleMode.AI, where discipline meets artificial intelligence.
-
-## About HustleMode.AI
-
-HustleMode.AI is an innovative AI accountability coach that helps you:
-- 🎯 Stay focused on your goals
-- 💪 Build unshakeable discipline
-- 📈 Track your progress
-- 🔥 Maintain high performance
-- 🧠 Develop mental toughness
-
-Visit [hustlemode.ai](https://hustlemode.ai) to learn more!
+Our AI accountability coach, built directly into iMessage and WhatsApp, keeps you on track every day—no extra app needed.
 
 ## Website Structure
 
