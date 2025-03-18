@@ -1,4 +1,10 @@
 RewriteEngine On
+
+# Rewrite /support to /support.html
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^support$ support.html [L] 
+RewriteRule ^support$ support.html [L]
+
+# Redirect /support.html to /support
+RewriteCond %{THE_REQUEST} /support\.html [NC]
+RewriteRule ^(.*?)support\.html$ /$1support [L,R=301] 
