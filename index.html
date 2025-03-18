@@ -34,14 +34,28 @@
         "operatingSystem": "Web",
         "offers": {
             "@type": "Offer",
-            "availability": "ComingSoon"
+            "availability": "ComingSoon",
+            "price": "0",
+            "priceCurrency": "USD"
         },
         "creator": {
             "@type": "Person",
-            "name": "Vivek Kotecha"
+            "name": "Vivek Kotecha",
+            "url": "https://www.linkedin.com/in/vbkotecha/"
         },
-        "keywords": "hustle mode, accountability, discipline, productivity, AI coach",
-        "url": "https://hustlemode.ai"
+        "keywords": "hustle mode, accountability, discipline, productivity, AI coach, extreme ownership, mental toughness, goal achievement",
+        "url": "https://hustlemode.ai",
+        "sameAs": [
+            "https://www.linkedin.com/in/vbkotecha/"
+        ],
+        "potentialAction": {
+            "@type": "JoinAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://hustlemode.ai"
+            },
+            "description": "Sign up for HustleMode.AI"
+        }
     }
     </script>
     
@@ -79,20 +93,156 @@
     <link rel="manifest" href="site.webmanifest">
     
     <!-- Security -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://use.typekit.net; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://use.typekit.net; script-src 'self' 'unsafe-inline';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://use.typekit.net; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://use.typekit.net; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Additional Meta Tags -->
+    <link rel="canonical" href="https://hustlemode.ai/">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="#000000">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="rating" content="General">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KWRLC82M2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6KWRLC82M2', {
+            'send_page_view': true,
+            'cookie_flags': 'secure;samesite=strict'
+        });
+
+        // Initialize tracking variables
+        let startTime = new Date();
+        let maxScroll = 0;
+        let hasInteracted = false;
+        let lastInteractionTime = startTime;
+        let bounceTimeout;
+
+        // Performance tracking
+        window.addEventListener('load', function() {
+            // Track page load performance
+            if (window.performance) {
+                const perf = window.performance.timing;
+                const pageLoadTime = perf.loadEventEnd - perf.navigationStart;
+                const domReadyTime = perf.domContentLoadedEventEnd - perf.navigationStart;
+                
+                gtag('event', 'performance', {
+                    'event_category': 'technical',
+                    'page_load_time': pageLoadTime,
+                    'dom_ready_time': domReadyTime
+                });
+            }
+
+            // Track if the page was loaded from cache
+            const navigation = performance.getEntriesByType("navigation")[0];
+            if (navigation) {
+                gtag('event', 'page_load_type', {
+                    'event_category': 'technical',
+                    'type': navigation.type // navigate, reload, back_forward, prerender
+                });
+            }
+        });
+
+        // Scroll depth tracking
+        let scrollMarkers = [25, 50, 75, 100];
+        let reachedMarkers = new Set();
+
+        function calculateScrollPercentage() {
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            return scrollHeight > 0 ? Math.round((window.scrollY / scrollHeight) * 100) : 100;
+        }
+
+        window.addEventListener('scroll', function() {
+            const scrollPercentage = calculateScrollPercentage();
+            maxScroll = Math.max(maxScroll, scrollPercentage);
+            
+            scrollMarkers.forEach(marker => {
+                if (!reachedMarkers.has(marker) && scrollPercentage >= marker) {
+                    reachedMarkers.add(marker);
+                    gtag('event', 'scroll_depth', {
+                        'event_category': 'engagement',
+                        'event_label': `${marker}%_reached`,
+                        'non_interaction': true
+                    });
+                }
+            });
+        });
+
+        // User interaction tracking
+        function trackInteraction(type, detail = '') {
+            if (!hasInteracted) {
+                hasInteracted = true;
+                gtag('event', 'first_interaction', {
+                    'event_category': 'engagement',
+                    'event_label': type,
+                    'time_to_first_interaction': Math.round((new Date() - startTime) / 1000)
+                });
+            }
+            lastInteractionTime = new Date();
+            clearTimeout(bounceTimeout);
+        }
+
+        // Track various user interactions
+        document.addEventListener('mousemove', () => trackInteraction('mouse_move'), { once: true });
+        document.addEventListener('keydown', () => trackInteraction('keyboard'), { once: true });
+        document.addEventListener('touchstart', () => trackInteraction('touch'), { once: true });
+        document.addEventListener('copy', () => trackInteraction('copy'));
+
+        // Enhanced CTA tracking
+        function trackCTAClick() {
+            const timeSpent = Math.round((new Date() - startTime) / 1000);
+            gtag('event', 'cta_click', {
+                'event_category': 'engagement',
+                'event_label': 'coming_soon_button',
+                'time_to_click': timeSpent,
+                'max_scroll_percentage': maxScroll,
+                'had_prior_interaction': hasInteracted
+            });
+            return false;
+        }
+
+        // Session quality tracking
+        window.addEventListener('beforeunload', function() {
+            const timeSpent = Math.round((new Date() - startTime) / 1000);
+            const lastInteractionDelta = Math.round((new Date() - lastInteractionTime) / 1000);
+            
+            gtag('event', 'session_end', {
+                'event_category': 'engagement',
+                'time_on_page': timeSpent,
+                'max_scroll_depth': maxScroll,
+                'had_interaction': hasInteracted,
+                'time_since_last_interaction': lastInteractionDelta,
+                'scroll_milestones_reached': Array.from(reachedMarkers).join(',')
+            });
+        });
+
+        // Device and browser information
+        gtag('event', 'client_info', {
+            'event_category': 'technical',
+            'screen_resolution': `${window.screen.width}x${window.screen.height}`,
+            'viewport_size': `${window.innerWidth}x${window.innerHeight}`,
+            'pixel_ratio': window.devicePixelRatio,
+            'is_mobile': /Mobi|Android/i.test(navigator.userAgent)
+        });
+    </script>
 </head>
 <body>
     <main>
         <img src="assets/images/logo.png" alt="HustleMode.AI Logo" class="logo" width="120" height="120" loading="eager" decoding="async">
         <h1>HustleMode.AI</h1>
         <h2>AI Accountability Coach</h2>
-        <a href="#" class="cta-button">Coming Soon</a>
+        <a href="#" class="cta-button" onclick="return trackCTAClick();">Coming Soon</a>
     </main>
     <footer>
-        <a href="/about.html">About</a> | <a href="/support.html">Support</a> | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a>
+        <a href="/about" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'about'});">About</a> | 
+        <a href="/terms" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'terms'});">Terms</a> | 
+        <a href="/privacy" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'privacy'});">Privacy</a>
     </footer>
 </body>
 </html> 
