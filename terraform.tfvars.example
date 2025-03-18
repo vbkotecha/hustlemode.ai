@@ -1,0 +1,35 @@
+# terraform.tfvars.example
+#
+# This is an example configuration file for the infrastructure.
+# Copy this file to 'terraform.tfvars' and update the values according to your environment.
+# IMPORTANT: Never commit the actual terraform.tfvars file to version control.
+#
+# Author: Infrastructure Team
+# Last Updated: 2024
+
+# Environment Configuration
+# Valid values: "dev", "staging", "prod"
+environment = "dev"
+
+# AWS Region Configuration
+# Example: us-west-2, us-east-1, eu-west-1
+aws_region = "us-west-2"
+
+# AWS Authentication
+# IMPORTANT: Use environment variables or AWS Secrets Manager in production
+# Format: 20 character string for access key, 40+ character string for secret key
+aws_access_key = "AKIAXXXXXXXXXXXXXXXX"
+aws_secret_key = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+
+# Database Configuration
+# Password must be at least 16 characters and include:
+# - Uppercase letters
+# - Lowercase letters
+# - Numbers
+# - Special characters (!@#$%^&*()_+)
+db_password = "ExampleP@ssw0rd123!456"
+
+# Resource Sizing (Optional - defaults provided in variables.tf)
+# Uncomment and modify these values to override defaults
+# rds_instance_class = "db.t3.small"      # For production: Consider db.t3.medium or larger
+# rds_allocated_storage = 50              # For production: Consider 50GB or larger 

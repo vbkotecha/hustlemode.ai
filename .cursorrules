@@ -1,0 +1,46 @@
+# .cursorrules
+#
+# This file configures Cursor's behavior for different file types and directories
+# in the Hustlemode.ai project. It helps Cursor understand the codebase structure
+# and apply appropriate language-specific features.
+#
+# Format:
+# - name: Rule name for identification
+# - pattern: File pattern to match (supports glob patterns)
+# - exclude: Patterns to exclude (optional)
+# - language: Programming language for syntax highlighting and intelligence
+#
+# Author: Vivek Kotecha
+# Last Updated: 2025
+
+rules:
+  # Infrastructure Configuration
+  - name: "Terraform Files"
+    pattern: "**/*.tf"
+    language: "terraform"
+    description: "Infrastructure as Code files using Terraform"
+
+  # Configuration Files
+  - name: "Configuration"
+    pattern: ["**/*.json", "**/*.yaml", "**/*.yml"]
+    exclude: ["**/node_modules/**"]
+    language: "json"
+    description: "Project configuration files"
+
+  # Documentation
+  - name: "Documentation"
+    pattern: ["**/*.md"]
+    language: "markdown"
+    description: "Project documentation files"
+
+  # Environment Files
+  - name: "Environment Files"
+    pattern: ["**/.env*", "**/*.env"]
+    language: "plaintext"
+    description: "Environment configuration files"
+
+  # Dependencies (Excluded)
+  - name: "Dependencies"
+    pattern: ["**/node_modules/**", "**/.terraform/**"]
+    exclude: true
+    description: "Third-party dependencies to be ignored" 
