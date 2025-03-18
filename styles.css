@@ -252,4 +252,174 @@ footer a:hover {
     footer {
         padding: 0.75rem;
     }
+}
+
+/* Support Page Styles */
+.support-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: left;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #000;
+}
+
+.support-page .logo {
+    margin-bottom: 1rem;
+}
+
+.support-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-method {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.contact-method:hover {
+    transform: translateY(-2px);
+}
+
+.contact-method h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.contact-method p {
+    margin: 0;
+}
+
+.contact-method a {
+    color: #fff;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.contact-method a:hover {
+    opacity: 0.8;
+}
+
+address {
+    font-style: normal;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .support-page {
+        padding: 1rem;
+    }
+    
+    .contact-methods {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-method {
+        padding: 1rem;
+    }
+}
+
+/* About Page Styles */
+.about-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: left;
+}
+
+.about-content {
+    margin-top: 2rem;
+}
+
+.about-content section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.about-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.about-content p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.about-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.about-content li {
+    padding: 0.5rem 0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.about-content li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #666;
+}
+
+.founder .connect {
+    margin-top: 1.5rem;
+    font-weight: 500;
+}
+
+.founder .connect a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: border-color 0.2s;
+}
+
+.founder .connect a:hover {
+    border-color: #fff;
+}
+
+@media (max-width: 600px) {
+    .about-page {
+        padding: 1rem;
+    }
+    
+    .about-content section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
 } 
