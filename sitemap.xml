@@ -2,20 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://hustlemode.ai/</loc>
-        <lastmod>2024-02-14</lastmod>
+        <lastmod>2024-03-24</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://hustlemode.ai/about.html</loc>
-        <lastmod>2024-02-14</lastmod>
+        <lastmod>2024-03-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://hustlemode.ai/support.html</loc>
-        <lastmod>2024-02-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <loc>https://hustlemode.ai/terms.html</loc>
+        <lastmod>2024-03-24</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://hustlemode.ai/privacy.html</loc>
+        <lastmod>2024-03-24</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.5</priority>
     </url>
 </urlset> 
