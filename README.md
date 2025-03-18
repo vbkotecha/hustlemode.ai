@@ -327,7 +327,7 @@ For any issues or questions, please contact:
 
 # HustleMode.AI Infrastructure
 
-This repository contains the infrastructure and backend code for HustleMode.AI, an AI-powered personal assistant.
+This repository contains the infrastructure and backend code for HustleMode.AI, an AI-powered accountability coach.
 
 ## Project Structure
 
@@ -347,78 +347,152 @@ This repository contains the infrastructure and backend code for HustleMode.AI, 
 
 ## Setup
 
-1. Clone the repository:
-   ```bash
-   git clone git@github.com:vbkotecha/hustlemode-infra.git
-   cd hustlemode-infra
-   ```
+### 1. AWS Account Setup
 
-2. Create `terraform.tfvars` from the example:
-   ```bash
-   cp terraform.tfvars.example terraform.tfvars
-   ```
-   Edit `terraform.tfvars` with your configuration values.
+1. AWS account with the following IAM permissions:
+   - Create an IAM user for Terraform:
+     1. Log into the AWS Console (https://console.aws.amazon.com)
+     2. Go to IAM service
+     3. Click "Users" in the left sidebar
+     4. Click "Create user"
+     5. Enter a name like "terraform-admin"
+     6. Click "Next"
+     7. Select "Attach policies directly"
+     8. Search for and attach these policies:
+        - AmazonRDSFullAccess
+        - AmazonVPCFullAccess 
+        - AmazonS3FullAccess
+        - AmazonDynamoDBFullAccess
+        - IAMFullAccess
+        - AWSLambda_FullAccess
+     9. Click "Next" and then "Create user"
+     10. On the user details page, click "Security credentials"
+     11. Click "Create access key"
+     12. Choose "Command Line Interface (CLI)"
+     13. Click through the prompts
+     14. **Important**: Save the Access Key ID and Secret Access Key shown - you'll need these later
 
-3. Initialize Terraform:
-   ```bash
-   terraform init
-   ```
+   Note: For production environments, you should create more restrictive custom policies rather than using the *FullAccess policies.
 
-4. Deploy the infrastructure:
-   ```bash
-   terraform plan    # Review the changes
-   terraform apply   # Apply the changes
-   ```
+### 2. Local Development Setup
 
-## Backend Development
+```bash
+# Clone the repository
+git clone git@github.com:vbkotecha/hustlemode-infra.git
+cd hustlemode-infra
 
-1. Set up a Python virtual environment:
-   ```bash
-   cd backend
-   python -m venv venv
-   source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
+# Set up Python virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: .\venv\Scripts\activate
+pip install -r backend/requirements.txt
 
-2. Run the development server:
-   ```bash
-   uvicorn app.main:app --reload
-   ```
+# Install Node.js dependencies
+cd lambda/functions
+npm install
+cd ../..
 
-## Lambda Functions
-
-1. Install dependencies:
-   ```bash
-   cd lambda
-   npm install
-   ```
-
-2. Deploy Lambda functions:
-   ```bash
-   terraform apply -target=module.lambda
-   ```
-
-## Environment Variables
-
-Create a `.env` file in the backend directory with the following variables:
-```
-AWS_REGION=us-east-1
-DYNAMODB_TABLE=hustlemode-tasks
-OPENAI_API_KEY=your_api_key
+# Initialize Terraform
+cd infrastructure/terraform
+terraform init
 ```
 
-## Security
+### 3. Configuration
 
-- Never commit sensitive information like API keys or credentials
-- Use AWS KMS for encrypting sensitive values
-- Follow the principle of least privilege for IAM roles
+Create a `terraform.tfvars` file in the `infrastructure/terraform` directory:
+
+```hcl
+environment = "dev"
+region      = "us-east-1"
+project     = "hustlemode"
+
+# Add other variables as needed
+```
+
+## Development
+
+### Backend Development
+
+```bash
+# Start the FastAPI development server
+cd backend
+uvicorn app.main:app --reload
+```
+
+### Lambda Functions
+
+```bash
+# Test Lambda functions locally
+cd lambda/functions
+npm test
+```
+
+### Infrastructure Changes
+
+```bash
+# Plan Terraform changes
+cd infrastructure/terraform
+terraform plan
+
+# Apply changes
+terraform apply
+```
+
+## Production Considerations
+
+### Security
+- Enable AWS CloudTrail for API activity logging
+- Use AWS Config for resource compliance
+- Implement AWS GuardDuty for threat detection
+- Enable VPC Flow Logs
+- Use AWS WAF for web application protection
+
+### Monitoring
+- Set up CloudWatch Alarms for:
+  - Lambda function errors
+  - API Gateway latency
+  - DynamoDB throttling
+  - Cost thresholds
+
+### Backup and Recovery
+- Enable DynamoDB point-in-time recovery
+- Set up S3 versioning
+- Document recovery procedures
+- Regular backup testing
+
+### Scaling
+- Monitor resource utilization
+- Set up auto-scaling policies
+- Document scaling procedures
+
+## Maintenance
+
+### Regular Tasks
+1. Review and apply AWS patches
+2. Monitor and optimize costs
+3. Review security groups and access policies
+4. Update dependencies
+5. Review and update backup strategies
+
+### Emergency Procedures
+Document steps for:
+1. Service outage response
+2. Security incident response
+3. Data recovery
+4. Rollback procedures
+
+## Support and Escalation
+
+For any issues or questions, please contact:
+- Email: support@hustlemode.ai
+- Phone: +1 (781) 747-0041
 
 ## Contributing
 
 1. Create a new branch for your feature
 2. Make your changes
 3. Submit a pull request
+4. Ensure CI/CD checks pass
 
 ## License
 
-Copyright © 2024 Vivek Kotecha. All rights reserved. 
+Proprietary - All rights reserved 

@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
-Sitemap: https://hustlemode.ai/sitemap.xml 
+Allow: /about
+Allow: /terms
+Allow: /privacy
+Allow: /sitemap.xml
+
+Sitemap: https://hustlemode.ai/sitemap.xml
+
+# Optimize crawl rate
+Crawl-delay: 1 
