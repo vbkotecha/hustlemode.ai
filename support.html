@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
     <!-- Primary Meta Tags -->
     <title>Support - HustleMode.AI</title>
     <meta name="description" content="Get support for HustleMode.AI - Your AI Accountability Coach">
+    <meta name="robots" content="index, follow">
     
     <!-- Adobe Fonts (Proxima Nova) -->
     <link rel="stylesheet" href="https://use.typekit.net/mxj8dvt.css">
@@ -18,14 +21,32 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
+
+    <!-- Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://use.typekit.net; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://use.typekit.net; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KWRLC82M2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6KWRLC82M2', {
+            'send_page_view': true,
+            'cookie_flags': 'secure;samesite=strict'
+        });
+    </script>
 </head>
 <body>
-    <main class="support-page">
+    <main class="legal-page">
         <a href="/" class="back-link">← Back to Home</a>
         <img src="assets/images/logo.png" alt="HustleMode.AI Logo" class="logo" width="80" height="80" loading="eager" decoding="async">
         <h1>Support</h1>
         
-        <div class="support-content">
+        <div class="legal-content">
             <section class="contact">
                 <h2>Contact Us</h2>
                 <p>Need help with HustleMode.AI? We're here for you:</p>
@@ -37,22 +58,40 @@
 
             <section class="faq">
                 <h2>Frequently Asked Questions</h2>
+                
+                <h3>How do I get started with HustleMode.AI?</h3>
+                <p>Simply sign up on our website, and our AI coach will guide you through the onboarding process to set up your goals and preferences.</p>
+
                 <h3>How do I reset my password?</h3>
-                <p>To reset your password, click the "Forgot Password" link on the login page and follow the instructions.</p>
+                <p>Click the "Forgot Password" link on the login page and follow the instructions sent to your email.</p>
 
                 <h3>How do I update my payment information?</h3>
-                <p>Log in to your account, go to the Billing section, and click "Update Payment Method".</p>
+                <p>Log in to your account, go to the Billing section in your settings, and click "Update Payment Method".</p>
 
                 <h3>What if I'm not satisfied with HustleMode.AI?</h3>
                 <p>We offer a 30-day money-back guarantee. If you're not completely satisfied, contact us within the first 30 days for a full refund.</p>
+
+                <h3>How do I customize my coaching experience?</h3>
+                <p>You can adjust your preferences, communication style, and goals through your account settings at any time.</p>
+
+                <h3>Is my data secure?</h3>
+                <p>Yes, we use industry-standard encryption and security measures to protect your data. Read our <a href="/privacy">Privacy Policy</a> for more details.</p>
+            </section>
+
+            <section class="mailing-address">
+                <h2>Mailing Address</h2>
+                <address>
+                    512 W Martin Luther King Jr Blvd #228<br>
+                    Austin, TX 78701
+                </address>
             </section>
         </div>
     </main>
     <footer>
-        <a href="/about" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'about'});">About</a> | 
-        <a href="/support" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'support'});">Support</a> | 
-        <a href="/terms" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'terms'});">Terms</a> | 
-        <a href="/privacy" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'privacy'});">Privacy</a>
+        <a href="/about.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'about'});">About</a> | 
+        <a href="/support.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'support'});">Support</a> | 
+        <a href="/terms.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'terms'});">Terms</a> | 
+        <a href="/privacy.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'privacy'});">Privacy</a>
     </footer>
 </body>
 </html> 
