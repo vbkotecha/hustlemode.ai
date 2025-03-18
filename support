@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#000000">
     
-    <!-- Primary Meta Tags -->
     <title>Support - HustleMode.AI</title>
     <meta name="description" content="Contact support for HustleMode.AI - Your AI Accountability Coach">
     
-    <!-- Adobe Fonts (Proxima Nova) -->
     <link rel="stylesheet" href="https://use.typekit.net/mxj8dvt.css">
     <link rel="stylesheet" href="styles.css">
     
-    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
@@ -22,17 +19,19 @@
 <body>
     <main class="support-page">
         <a href="/" class="back-link">← Back to Home</a>
-        <img src="assets/images/logo.png" alt="HustleMode.AI Logo" class="logo" width="80" height="80" loading="eager" decoding="async">
+        
+        <img src="assets/images/logo.png" alt="HustleMode.AI Logo" class="logo" width="80" height="80">
+        
         <h1>Support</h1>
         
         <div class="contact-info">
             <section>
                 <h2>Contact Us</h2>
-                <p>We're here to help! Here's how you can reach us:</p>
+                <p>We're here to help! Reach out through any of these methods:</p>
                 
                 <div class="contact-methods">
                     <div class="contact-method">
-                        <h3>Email</h3>
+                        <h3>Email Support</h3>
                         <p><a href="mailto:support@hustlemode.ai">support@hustlemode.ai</a></p>
                     </div>
                     
@@ -52,8 +51,12 @@
             </section>
         </div>
     </main>
+    
     <footer>
-        <a href="/">Home</a> | <a href="/about.html">About</a> | <a href="/privacy.html">Privacy</a> | <a href="/terms.html">Terms</a>
+        <a href="/">Home</a> | 
+        <a href="/about.html">About</a> | 
+        <a href="/privacy.html">Privacy</a> | 
+        <a href="/terms.html">Terms</a>
     </footer>
 </body>
 </html> 
