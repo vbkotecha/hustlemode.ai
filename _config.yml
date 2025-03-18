@@ -1,0 +1,19 @@
+# Jekyll configuration for HustleMode.AI
+
+# Enable pretty URLs (removes .html extension from URLs)
+permalink: pretty
+
+# Set default layouts
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - LICENSE
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock 
