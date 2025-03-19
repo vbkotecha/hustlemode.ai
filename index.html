@@ -272,16 +272,26 @@
 
         @media (max-width: 968px) {
             .main-content {
-                flex-direction: column-reverse;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 gap: 2rem;
                 padding: 0;
                 margin-bottom: 2rem;
             }
 
             .left-content {
+                order: 1;
                 text-align: center;
                 width: 100%;
                 max-width: 100%;
+            }
+
+            .demo-section {
+                order: 2;
+                margin: 0 auto 1rem;
+                max-width: 240px;
+                width: 100%;
             }
 
             .hero-section {
@@ -317,12 +327,6 @@
                 height: 48px;
             }
 
-            .demo-section {
-                margin: 0 auto 1rem;
-                max-width: 240px;
-                width: 100%;
-            }
-
             .demo-image {
                 width: 100%;
                 max-width: 240px;
@@ -330,9 +334,8 @@
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             }
 
-            .success-message {
-                text-align: center;
-                margin-top: 0.75rem;
+            .demo-overlay {
+                display: none;
             }
 
             .landing-container {
@@ -389,159 +392,6 @@
             flex-direction: column;
             min-height: 100vh;
         }
-
-        .desktop-only {
-            display: flex;
-        }
-
-        .mobile-only {
-            display: none;
-        }
-
-        .mobile-content {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            gap: 2rem;
-        }
-
-        @media (max-width: 968px) {
-            .desktop-only {
-                display: none;
-            }
-
-            .mobile-only {
-                display: block;
-                width: 100%;
-            }
-
-            .mobile-content {
-                text-align: center;
-            }
-        }
-
-        /* Mobile styling improvements */
-        @media (max-width: 968px) {
-            .landing-container {
-                padding: 2.5rem 1.25rem 1.5rem;
-                justify-content: flex-start;
-            }
-            
-            .logo {
-                width: 80px;
-                height: 80px;
-                margin-bottom: 2.5rem;
-            }
-            
-            .mobile-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                max-width: 450px;
-                margin: 0 auto;
-                gap: 3.5rem;
-            }
-            
-            .hero-section {
-                text-align: center;
-                margin-bottom: 0.5rem;
-                width: 100%;
-                padding-top: 1rem;
-            }
-            
-            .hero-headline {
-                font-size: 2.4rem;
-                margin-bottom: 2.5rem;
-                line-height: 1.2;
-            }
-            
-            .hero-subheadline {
-                font-size: 1.25rem;
-                margin-bottom: 2.5rem;
-                line-height: 1.4;
-                opacity: 0.9;
-            }
-            
-            .email-form {
-                max-width: 100%;
-                width: 100%;
-                margin-bottom: 0.5rem;
-            }
-            
-            .form-group {
-                flex-direction: column;
-                gap: 0.75rem;
-            }
-            
-            .form-input {
-                width: 100%;
-                height: 54px;
-                padding: 0 1.25rem;
-                font-size: 1rem;
-            }
-            
-            .waitlist-btn {
-                width: 100%;
-                height: 54px;
-                font-size: 1.1rem;
-                font-weight: 600;
-            }
-            
-            .demo-section {
-                margin: 0 auto;
-                max-width: 280px;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-            }
-            
-            .demo-image {
-                width: 100%;
-                max-width: 280px;
-                height: auto;
-                border-radius: 24px;
-                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-            }
-            
-            .success-message {
-                text-align: center;
-                padding: 0.75rem;
-                margin-top: 0.75rem;
-            }
-            
-            footer {
-                text-align: center;
-                padding: 1.25rem 1rem;
-                font-size: 0.9rem;
-                margin-top: 2rem;
-            }
-            
-            footer a {
-                margin: 0 0.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .landing-container {
-                padding: 1.25rem 1rem;
-            }
-            
-            .hero-headline {
-                font-size: 2rem;
-            }
-            
-            .hero-subheadline {
-                font-size: 1.1rem;
-            }
-            
-            .demo-section {
-                max-width: 260px;
-            }
-            
-            .demo-image {
-                max-width: 260px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -550,7 +400,7 @@
             <img src="assets/images/logo.png" alt="HustleMode.AI Logo" class="logo" width="120" height="120" loading="eager" decoding="async">
         </a>
 
-        <div class="main-content desktop-only">
+        <div class="main-content">
             <div class="left-content">
                 <section class="hero-section">
                     <h1 class="hero-headline">Your AI Accountability Coach</h1>
@@ -572,30 +422,6 @@
                 <img src="assets/images/screenshot2.jpeg" alt="HustleMode.AI WhatsApp conversation showing real-time accountability" class="demo-image" width="360" height="720" loading="lazy">
                 <div class="demo-overlay"></div>
             </section>
-        </div>
-
-        <div class="mobile-only">
-            <div class="mobile-content">
-                <section class="hero-section">
-                    <h1 class="hero-headline">Your AI Accountability Coach</h1>
-                    <h2 class="hero-subheadline">Coming soon on iMessage and WhatsApp</h2>
-                    
-                    <div class="email-form">
-                        <div class="form-group">
-                            <input type="email" class="form-input" placeholder="Enter your email" id="email-mobile" required>
-                            <button class="waitlist-btn" onclick="joinWaitlistMobile()">Join The Waitlist</button>
-                        </div>
-                        <div class="success-message" id="success-message-mobile">
-                            Thanks for joining! We'll notify you as soon as HustleMode.AI launches.
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="demo-section">
-                    <img src="assets/images/screenshot2.jpeg" alt="HustleMode.AI WhatsApp conversation showing real-time accountability" class="demo-image" width="240" height="480" loading="lazy">
-                    <div class="demo-overlay"></div>
-                </section>
-            </div>
         </div>
     </main>
 
@@ -622,34 +448,6 @@
             // Hide success message after 5 seconds
             setTimeout(() => {
                 document.getElementById('success-message').style.display = 'none';
-            }, 5000);
-            
-            // Here you would typically send the email to your server or email service
-            console.log('Email submitted:', email);
-        }
-
-        function joinWaitlistMobile() {
-            const email = document.getElementById('email-mobile').value;
-            if (!email || !email.includes('@')) {
-                alert('Please enter a valid email address');
-                return;
-            }
-            
-            // Track signup event
-            if (typeof gtag === 'function') {
-                gtag('event', 'waitlist_signup', {
-                    'event_category': 'engagement',
-                    'event_label': 'landing_page_form_mobile'
-                });
-            }
-            
-            // Show success message
-            document.getElementById('email-mobile').value = '';
-            document.getElementById('success-message-mobile').style.display = 'block';
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-                document.getElementById('success-message-mobile').style.display = 'none';
             }, 5000);
             
             // Here you would typically send the email to your server or email service
