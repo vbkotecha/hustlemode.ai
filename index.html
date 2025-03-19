@@ -150,6 +150,7 @@
 
         .hero-section {
             margin-bottom: 2rem;
+            text-align: left;
         }
 
         .hero-headline {
@@ -225,16 +226,22 @@
 
         @media (max-width: 968px) {
             .main-content {
-                flex-direction: column;
+                flex-direction: column-reverse;
                 gap: 2rem;
             }
 
             .left-content {
                 text-align: center;
+                width: 100%;
+            }
+
+            .hero-section {
+                text-align: center;
             }
 
             .demo-section {
                 margin: 0 auto;
+                max-width: 320px;
             }
         }
 
@@ -277,12 +284,12 @@
             <div class="left-content">
                 <section class="hero-section">
                     <h1 class="hero-headline">Your AI Accountability Coach</h1>
-                    <h2 class="hero-subheadline">Available via iMessage and WhatsApp</h2>
+                    <h2 class="hero-subheadline">Coming soon on iMessage and WhatsApp</h2>
                 </section>
             </div>
 
             <section class="demo-section">
-                <img src="assets/images/demo/whatsapp-demo.png" alt="HustleMode.AI WhatsApp conversation showing real-time accountability" class="demo-image" width="360" height="720" loading="lazy">
+                <img src="assets/images/screenshot2.jpeg" alt="HustleMode.AI WhatsApp conversation showing real-time accountability" class="demo-image" width="360" height="720" loading="lazy">
                 <div class="demo-overlay"></div>
             </section>
         </div>
