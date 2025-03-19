@@ -90,9 +90,9 @@
     <link rel="manifest" href="site.webmanifest">
     
     <!-- Security -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://use.typekit.net; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://use.typekit.net; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://use.typekit.net https://docs.google.com; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://use.typekit.net https://docs.google.com; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://docs.google.com; connect-src 'self' https://www.google-analytics.com; frame-src https://docs.google.com;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Frame-Options" value="ALLOW-FROM https://docs.google.com">
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <!-- Additional Meta Tags -->
