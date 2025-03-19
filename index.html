@@ -389,6 +389,36 @@
             flex-direction: column;
             min-height: 100vh;
         }
+
+        .desktop-only {
+            display: flex;
+        }
+
+        .mobile-only {
+            display: none;
+        }
+
+        .mobile-content {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 2rem;
+        }
+
+        @media (max-width: 968px) {
+            .desktop-only {
+                display: none;
+            }
+
+            .mobile-only {
+                display: block;
+                width: 100%;
+            }
+
+            .mobile-content {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -397,7 +427,7 @@
             <img src="assets/images/logo.png" alt="HustleMode.AI Logo" class="logo" width="120" height="120" loading="eager" decoding="async">
         </a>
 
-        <div class="main-content">
+        <div class="main-content desktop-only">
             <div class="left-content">
                 <section class="hero-section">
                     <h1 class="hero-headline">Your AI Accountability Coach</h1>
@@ -419,6 +449,30 @@
                 <img src="assets/images/screenshot2.jpeg" alt="HustleMode.AI WhatsApp conversation showing real-time accountability" class="demo-image" width="360" height="720" loading="lazy">
                 <div class="demo-overlay"></div>
             </section>
+        </div>
+
+        <div class="mobile-only">
+            <div class="mobile-content">
+                <section class="hero-section">
+                    <h1 class="hero-headline">Your AI Accountability Coach</h1>
+                    <h2 class="hero-subheadline">Coming soon on iMessage and WhatsApp</h2>
+                    
+                    <div class="email-form">
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Enter your email" id="email-mobile" required>
+                            <button class="waitlist-btn" onclick="joinWaitlistMobile()">Join The Waitlist</button>
+                        </div>
+                        <div class="success-message" id="success-message-mobile">
+                            Thanks for joining! We'll notify you as soon as HustleMode.AI launches.
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="demo-section">
+                    <img src="assets/images/screenshot2.jpeg" alt="HustleMode.AI WhatsApp conversation showing real-time accountability" class="demo-image" width="240" height="480" loading="lazy">
+                    <div class="demo-overlay"></div>
+                </section>
+            </div>
         </div>
     </main>
 
@@ -445,6 +499,34 @@
             // Hide success message after 5 seconds
             setTimeout(() => {
                 document.getElementById('success-message').style.display = 'none';
+            }, 5000);
+            
+            // Here you would typically send the email to your server or email service
+            console.log('Email submitted:', email);
+        }
+
+        function joinWaitlistMobile() {
+            const email = document.getElementById('email-mobile').value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email address');
+                return;
+            }
+            
+            // Track signup event
+            if (typeof gtag === 'function') {
+                gtag('event', 'waitlist_signup', {
+                    'event_category': 'engagement',
+                    'event_label': 'landing_page_form_mobile'
+                });
+            }
+            
+            // Show success message
+            document.getElementById('email-mobile').value = '';
+            document.getElementById('success-message-mobile').style.display = 'block';
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('success-message-mobile').style.display = 'none';
             }, 5000);
             
             // Here you would typically send the email to your server or email service
