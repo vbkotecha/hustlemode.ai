@@ -123,6 +123,19 @@
     </script>
 
     <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "proxima-nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
         .landing-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -158,9 +171,7 @@
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.1;
-            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
@@ -239,11 +250,11 @@
         }
 
         .waitlist-btn:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: 
                 0 8px 20px rgba(0,0,0,0.15),
                 inset 0 2px 4px rgba(0,0,0,0.05);
-            background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
+            background: #ffffff;
             border-color: rgba(0,0,0,0.15);
         }
 
@@ -252,7 +263,7 @@
             box-shadow: 
                 0 4px 10px rgba(0,0,0,0.1),
                 inset 0 4px 8px rgba(0,0,0,0.1);
-            background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
+            background: #f0f0f0;
             border-color: rgba(0,0,0,0.2);
         }
 
@@ -315,7 +326,7 @@
                 max-width: 100%;
                 min-height: 80vh;
                 padding: 4rem 1rem;
-                background: linear-gradient(135deg, #000000 0%, #121212 100%);
+                background: #000000;
             }
 
             .hero-section {
@@ -399,10 +410,7 @@
                 left: -4px;
                 right: -4px;
                 bottom: -4px;
-                background: linear-gradient(135deg, 
-                    rgba(168, 85, 247, 0.3) 0%, 
-                    rgba(99, 102, 241, 0.3) 100%
-                );
+                background: rgba(168, 85, 247, 0.3);
                 border-radius: 20px;
                 opacity: 0;
                 z-index: -2;
@@ -463,7 +471,7 @@
                 box-shadow: 
                     0 8px 20px rgba(0,0,0,0.15),
                     inset 0 2px 4px rgba(0,0,0,0.05);
-                background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
+                background: #ffffff;
                 border-color: rgba(0,0,0,0.15);
             }
 
@@ -472,7 +480,7 @@
                 box-shadow: 
                     0 4px 10px rgba(0,0,0,0.1),
                     inset 0 4px 8px rgba(0,0,0,0.1);
-                background: linear-gradient(135deg, #e0e0e0 0%, #f0f0f0 100%);
+                background: #f0f0f0;
                 border-color: rgba(0,0,0,0.2);
             }
 
@@ -484,7 +492,7 @@
                 width: 100%;
                 max-width: 100%;
                 min-height: 50vh;
-                background: rgba(0,0,0,0.05);
+                background: #000000;
                 padding: 2rem 1rem;
             }
 
