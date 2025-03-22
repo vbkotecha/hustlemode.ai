@@ -1,4 +1,4 @@
-viousl<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,22 +23,10 @@ viousl<!DOCTYPE html>
     <link rel="manifest" href="site.webmanifest">
 
     <!-- Security -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://use.typekit.net; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://use.typekit.net; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://use.typekit.net; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://use.typekit.net; script-src 'self' 'unsafe-inline'; connect-src 'self';">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KWRLC82M2"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-6KWRLC82M2', {
-            'send_page_view': true,
-            'cookie_flags': 'secure;samesite=strict'
-        });
-    </script>
 </head>
 <body>
     <main class="legal-page">
@@ -120,10 +108,10 @@ viousl<!DOCTYPE html>
         </div>
     </main>
     <footer>
-        <a href="/about.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'about'});">About</a> | 
-        <a href="/support.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'support'});">Support</a> | 
-        <a href="/terms.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'terms'});">Terms</a> | 
-        <a href="/privacy.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'privacy'});">Privacy</a>
+        <a href="/about.html">About</a> | 
+        <a href="/support.html">Support</a> | 
+        <a href="/terms.html">Terms</a> | 
+        <a href="/privacy.html">Privacy</a>
     </footer>
 </body>
 </html> 
