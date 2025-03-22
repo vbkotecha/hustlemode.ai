@@ -261,19 +261,274 @@
             max-width: 900px;
             position: relative;
             margin-left: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-frame {
+            background: linear-gradient(160deg, #f0f0f0 0%, #d1d1d1 100%);
+            border-radius: 48px;
+            padding: 15px 10px;
+            position: relative;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.4),
+                inset 0 -3px 10px rgba(0, 0, 0, 0.1),
+                inset 0 3px 10px rgba(255, 255, 255, 0.8);
+            max-width: 300px;
+            margin: 0 auto;
+            transform: perspective(2000px) rotateY(-10deg);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.15);
+        }
+
+        /* Power button */
+        .phone-frame::before {
+            content: '';
+            position: absolute;
+            right: -3px;
+            top: 120px;
+            width: 3px;
+            height: 30px;
+            background: #c0c0c0;
+            border-radius: 3px 0 0 3px;
+            box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Volume buttons */
+        .phone-frame::after {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: 100px;
+            width: 3px;
+            height: 60px;
+            background: #c0c0c0;
+            border-radius: 0 3px 3px 0;
+            box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .phone-frame:hover {
+            transform: perspective(2000px) rotateY(-5deg);
+        }
+        
+        .phone-inner {
+            background: #000;
+            border-radius: 40px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+            border: 1px solid #333;
+        }
+        
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 32px;
+            background: #000;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            z-index: 10;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .phone-camera {
+            width: 8px;
+            height: 8px;
+            background: #1a1a1a;
+            border-radius: 50%;
+            position: relative;
+            margin-right: 8px;
+        }
+        
+        .phone-camera::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #444;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+        }
+        
+        .phone-speaker {
+            width: 40px;
+            height: 6px;
+            background: #1a1a1a;
+            border-radius: 3px;
+        }
+        
+        .phone-header {
+            height: 60px;
+            background: #000;
+            position: relative;
+            z-index: 2;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .phone-status-bar {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            color: white;
+            font-size: 14px;
+            padding: 0 5px;
+        }
+        
+        .phone-time {
+            font-weight: bold;
+        }
+        
+        .phone-icons {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .phone-app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #000;
+            color: white;
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .app-back {
+            color: #4a86ff;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        
+        .app-back .chevron {
+            font-size: 22px;
+            margin-right: 5px;
+        }
+        
+        .app-num {
+            background: #4a86ff;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+        
+        .app-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .app-title img {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            margin-bottom: 3px;
+        }
+        
+        .app-title-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .app-video {
+            color: #4a86ff;
+            font-size: 24px;
+            opacity: 0.9;
+        }
+        
+        .phone-footer {
+            height: 30px;
+            background: #000;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .home-indicator {
+            width: 120px;
+            height: 5px;
+            background: #fff;
+            border-radius: 3px;
+        }
+        
+        .phone-content {
+            display: flex;
+            flex-direction: column;
+            background: #000;
+            padding-top: 10px;
         }
 
         .demo-image {
             width: 100%;
             height: auto;
-            border-radius: 40px;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
-            transform: perspective(2000px) rotateY(-7deg);
-            transition: transform 0.3s ease;
+            border-radius: 0;
+            box-shadow: none;
+            transform: none;
+            display: block;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .demo-image:hover {
-            transform: perspective(2000px) rotateY(-4deg);
+        .imessage-input {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: #000;
+            border-top: 1px solid #222;
+            margin-top: -4px;
+        }
+        
+        .imessage-plus {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .imessage-textbox {
+            flex: 1;
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 10px 15px;
+            color: white;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .imessage-mic {
+            color: #4a86ff;
+            font-size: 20px;
         }
 
         .demo-overlay {
@@ -285,17 +540,6 @@
             background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 100%);
             border-radius: 24px;
             pointer-events: none;
-        }
-
-        .success-message {
-            display: none;
-            text-align: left;
-            padding: 1rem;
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            border-radius: 8px;
-            color: #10b981;
-            margin-top: 1rem;
         }
 
         @media (max-width: 968px) {
@@ -494,16 +738,41 @@
                 padding: 2rem 1rem;
             }
 
-            .demo-image {
-                width: 100%;
-                max-width: 300px;
-                height: auto;
-                border-radius: 20px;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            .phone-frame {
+                max-width: 280px;
+                transform: none;
+                margin: 0 auto;
+                box-shadow: 
+                    0 20px 40px rgba(0, 0, 0, 0.4),
+                    inset 0 -3px 10px rgba(0, 0, 0, 0.1),
+                    inset 0 3px 10px rgba(255, 255, 255, 0.8);
             }
 
-            .demo-overlay {
-                display: none;
+            /* Adjusting buttons for mobile view */
+            .phone-frame::before {
+                right: -2px;
+                top: 100px;
+                width: 2px;
+                height: 25px;
+            }
+
+            .phone-frame::after {
+                left: -2px;
+                top: 80px;
+                width: 2px;
+                height: 50px;
+            }
+
+            .phone-header {
+                height: 40px;
+                padding: 5px 15px;
+            }
+
+            .demo-image {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                box-shadow: none;
             }
 
             .landing-container {
@@ -562,6 +831,50 @@
                 width: 70px;
                 height: 70px;
             }
+
+            .phone-frame {
+                max-width: 240px;
+                padding: 12px 8px;
+                border-radius: 40px;
+            }
+
+            .phone-inner {
+                border-radius: 32px;
+            }
+
+            .phone-notch {
+                height: 24px;
+                width: 35%;
+            }
+            
+            .phone-camera {
+                width: 6px;
+                height: 6px;
+            }
+            
+            .phone-speaker {
+                width: 30px;
+                height: 4px;
+            }
+
+            .phone-header, .phone-footer {
+                display: none;
+            }
+
+            .phone-app-header {
+                padding: 5px 10px;
+            }
+
+            .app-title img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .success-message {
+                max-width: 380px;
+                width: 100%;
+                text-align: center;
+            }
         }
 
         /* Add display:flex to landing-container to enable margin-top:auto on footer */
@@ -598,8 +911,48 @@
             </div>
 
             <section class="demo-section">
-                <img src="assets/images/screenshot2.jpeg" alt="HustleMode.AI WhatsApp conversation showing real-time accountability" class="demo-image" width="360" height="720" loading="lazy">
-                <div class="demo-overlay"></div>
+                <div class="phone-frame">
+                    <div class="phone-inner">
+                        <div class="phone-notch">
+                            <div class="phone-camera"></div>
+                            <div class="phone-speaker"></div>
+                        </div>
+                        <div class="phone-header">
+                            <div class="phone-status-bar">
+                                <div class="phone-time">10:27</div>
+                                <div class="phone-icons">
+                                    <span><strong>••</strong></span>
+                                    <span>📶</span>
+                                    <span>41<small>%</small></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phone-app-header">
+                            <div class="app-back">
+                                <span class="chevron">‹</span>
+                                <span class="app-num">2</span>
+                            </div>
+                            <div class="app-title">
+                                <img src="assets/images/logo.png" alt="HustleMode" width="40" height="40" style="border-radius: 10px; background-color: #385E74;">
+                                <span class="app-title-text">HustleMode</span>
+                            </div>
+                            <div class="app-video">📹</div>
+                        </div>
+                        <div class="phone-content">
+                            <img src="assets/images/screenshot2.jpeg" alt="HustleMode.AI WhatsApp conversation showing real-time accountability" class="demo-image" width="360" height="720" loading="lazy">
+                            <div class="imessage-input">
+                                <div class="imessage-plus">+</div>
+                                <div class="imessage-textbox">
+                                    <span>iMessage</span>
+                                    <span class="imessage-mic">🎤</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="phone-footer">
+                            <div class="home-indicator"></div>
+                        </div>
+                    </div>
+                </div>
             </section>
         </div>
     </main>
