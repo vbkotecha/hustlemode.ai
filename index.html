@@ -261,16 +261,20 @@
             max-width: 900px;
             position: relative;
             margin-left: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .demo-image {
-            width: 100%;
+            width: auto;
             height: auto;
             border-radius: 40px;
             box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
             transform: perspective(2000px) rotateY(-7deg);
             transition: transform 0.3s ease;
-            max-width: 540px;
+            max-width: none;
+            min-width: 540px;
         }
 
         .demo-image:hover {
@@ -487,6 +491,7 @@
             .demo-image {
                 width: 100%;
                 max-width: 450px;
+                min-width: unset;
                 height: auto;
                 border-radius: 20px;
                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
@@ -545,6 +550,7 @@
 
             .demo-image {
                 max-width: 300px;
+                min-width: unset;
                 width: 100%;
             }
 
