@@ -103,6 +103,25 @@
     <meta name="rating" content="General">
     <meta name="revisit-after" content="7 days">
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6KWRLC82M2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6KWRLC82M2', {
+            'send_page_view': true,
+            'cookie_flags': 'secure;samesite=strict'
+        });
+
+        function trackWaitlistSignup() {
+            gtag('event', 'waitlist_signup', {
+                'event_category': 'engagement',
+                'event_label': 'landing_page_form'
+            });
+        }
+    </script>
+
     <style>
         .landing-container {
             max-width: 1200px;
@@ -593,6 +612,14 @@
                 return;
             }
             
+            // Track signup event
+            if (typeof gtag === 'function') {
+                gtag('event', 'waitlist_signup', {
+                    'event_category': 'engagement',
+                    'event_label': 'landing_page_form'
+                });
+            }
+            
             // Show success message
             document.getElementById('email').value = '';
             document.getElementById('success-message').style.display = 'block';
@@ -608,10 +635,10 @@
     </script>
 
     <footer>
-        <a href="/about.html">About</a> | 
-        <a href="/support.html">Support</a> | 
-        <a href="/terms.html">Terms</a> | 
-        <a href="/privacy.html">Privacy</a>
+        <a href="/about.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'about'});">About</a> | 
+        <a href="/support.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'support'});">Support</a> | 
+        <a href="/terms.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'terms'});">Terms</a> | 
+        <a href="/privacy.html" onclick="gtag('event', 'click', {'event_category': 'navigation', 'event_label': 'privacy'});">Privacy</a>
     </footer>
 </body>
 </html> 
